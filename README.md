@@ -1,1 +1,2 @@
-# introduction
+# Introduction
+This is a website showing my basic profile and my biography. 
