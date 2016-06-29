@@ -1,5 +1,17 @@
 $(document).ready(function(){
 
+	$(window).scroll(function(){
+		var navbar = $(".navbar-default");
+		if($(document).scrollTop() > 0) {
+			navbar.css("background", "white");	
+			$(".like").animate({right: "0px"}, 400);
+		} else {
+			navbar.css("background", "black");
+			$(".like").animate({right: "-80px"}, 400);
+		}
+		
+	});
+
 	var checkVisibilty = function() {
 		if(document.getElementById("bio-btn").className !== "active") {
 		$(".bio").hide();
@@ -12,7 +24,7 @@ $(document).ready(function(){
 		}
 	}
 
-	checkVisibilty();
+	//checkVisibilty();
 	
 	$("#bio-btn").click(function(){
 		$("#skill-btn").removeClass("active");
@@ -40,4 +52,6 @@ $(document).ready(function(){
 		$(".contact").fadeIn();
 		checkVisibilty();
 	});
+
+
 });

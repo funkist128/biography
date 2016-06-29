@@ -2,3 +2,13 @@
 	margin: auto;
 	display: block;
 }
+
+.navbar-default {
+	background: black;
+	border-radius: 0;
+
+}
+
+.like {
+	right: -80px;
+}
