@@ -1,24 +1,43 @@
 $(document).ready(function(){
 
-	if(document.getElementById("bio-btn").className !== "active") {
+	var checkVisibilty = function() {
+		if(document.getElementById("bio-btn").className !== "active") {
 		$(".bio").hide();
+		}
+		if(document.getElementById("skill-btn").className !== "active") {
+			$(".skill").hide();
+		}
+		if(document.getElementById("contact-btn").className !== "active") {
+			$(".contact").hide();
+		}
 	}
-	if(document.getElementById("skill-btn").className !== "active") {
-		$(".skill").hide();
-	}
+
+	checkVisibilty();
+	
 	$("#bio-btn").click(function(){
 		$("#skill-btn").removeClass("active");
-		$(".home").fadeOut();
+		$("#contact-btn").removeClass("active");
 		$("#bio-btn").addClass("active");
+		$(".home").fadeOut();
 		$(".bio").fadeIn();
-		$(".skill").hide();
+		checkVisibilty();
 	});
 
 	$("#skill-btn").click(function(){
 		$("#bio-btn").removeClass("active");
-		$(".home").fadeOut();
+		$("#contact-btn").removeClass("active");
 		$("#skill-btn").addClass("active");
+		$(".home").fadeOut();
 		$(".skill").fadeIn();
-		$(".bio").hide();
+		checkVisibilty();
+	});
+
+	$("#contact-btn").click(function(){
+		$("#bio-btn").removeClass("active");
+		$("#skill-btn").removeClass("active");
+		$("#contact-btn").addClass("active");
+		$(".home").fadeOut();
+		$(".contact").fadeIn();
+		checkVisibilty();
 	});
 });
