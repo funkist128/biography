@@ -4,10 +4,10 @@ $(document).ready(function(){
 		var navbar = $(".navbar-default");
 		if($(document).scrollTop() > 0) {
 			navbar.css("background", "white");	
-			$(".like").animate({right: "0px"}, 400);
+			$(".like").stop().animate({right: "0px"}, 300);
 		} else {
 			navbar.css("background", "black");
-			$(".like").animate({right: "-80px"}, 400);
+			$(".like").stop().animate({right: "-80px"}, 300);	
 		}
 		
 	});
